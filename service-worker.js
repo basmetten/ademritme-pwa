@@ -1,4 +1,4 @@
-const CACHE_NAME = "ademritme-v4";
+const CACHE_NAME = "ademritme-v5";
 const ASSETS = [
   "./",
   "index.html",
