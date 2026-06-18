@@ -24,6 +24,7 @@
 html {
   min-height: 100%;
   background: var(--bg);
+  overflow-x: hidden;
 }
 
 body {
@@ -35,6 +36,8 @@ body {
   color: var(--text);
   letter-spacing: 0;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 button,
@@ -46,17 +49,19 @@ input {
   width: min(100%, 520px);
   min-height: 100svh;
   margin: 0 auto;
-  padding: calc(env(safe-area-inset-top) + 24px) 20px calc(env(safe-area-inset-bottom) + 22px);
+  padding: calc(env(safe-area-inset-top) + clamp(14px, 2.8svh, 24px)) clamp(14px, 4.8vw, 20px) calc(env(safe-area-inset-bottom) + clamp(16px, 2.6svh, 22px));
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  gap: 22px;
+  gap: clamp(14px, 2.5svh, 22px);
+  overflow: clip visible;
 }
 
 .hero {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: end;
-  justify-content: space-between;
-  gap: 18px;
+  gap: clamp(10px, 3vw, 18px);
+  min-width: 0;
 }
 
 .time-label,
@@ -72,14 +77,26 @@ input {
   margin: 0 0 8px;
   font-size: 0.88rem;
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  border-radius: 8px;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(2.75rem, 15vw, 4.8rem);
+  font-size: clamp(2.38rem, 13.2vw, 4.35rem);
   line-height: 0.9;
   font-weight: 780;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .ratio {
@@ -93,30 +110,32 @@ h1 {
 
 .duration-panel {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 5.6rem), 1fr));
+  gap: clamp(8px, 2.3vw, 10px);
+  min-width: 0;
 }
 
 .duration-card {
-  min-height: 96px;
+  min-height: clamp(72px, 10.4svh, 96px);
   border: 1px solid var(--line);
-  border-radius: 24px;
+  border-radius: clamp(18px, 5vw, 24px);
   background: var(--surface);
   color: var(--text);
   display: grid;
   place-content: center;
   gap: 4px;
+  min-width: 0;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .duration-card span {
-  font-size: 2.25rem;
+  font-size: clamp(1.82rem, 8vw, 2.25rem);
   line-height: 1;
   font-weight: 760;
 }
 
 .duration-card small {
-  font-size: 0.84rem;
+  font-size: clamp(0.74rem, 2.8vw, 0.84rem);
   font-weight: 700;
 }
 
@@ -129,19 +148,21 @@ h1 {
 .player {
   min-height: 0;
   border: 1px solid var(--line);
-  border-radius: 36px;
-  padding: 24px;
+  border-radius: clamp(26px, 7vw, 36px);
+  padding: clamp(16px, 5vw, 24px);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.035)),
     rgba(9, 23, 20, 0.72);
   box-shadow: 0 24px 68px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   display: grid;
   align-content: center;
-  gap: 24px;
+  gap: clamp(16px, 2.8svh, 24px);
+  overflow: hidden;
 }
 
 .breath-orb {
-  width: min(78vw, 310px);
+  width: min(72vw, 34svh, 310px);
+  min-width: 168px;
   aspect-ratio: 1;
   margin: 0 auto;
   position: relative;
@@ -183,13 +204,13 @@ h1 {
 
 .breath-copy span {
   color: var(--mint);
-  font-size: 1.05rem;
+  font-size: clamp(0.92rem, 3.6vw, 1.05rem);
   font-weight: 760;
 }
 
 .breath-copy strong {
   margin-top: 4px;
-  font-size: clamp(4rem, 20vw, 6.4rem);
+  font-size: clamp(3.05rem, 18vw, 6.2rem);
   line-height: 0.92;
   font-weight: 780;
   letter-spacing: 0;
@@ -197,13 +218,13 @@ h1 {
 
 .breath-copy small {
   margin-top: 8px;
-  font-size: 0.95rem;
+  font-size: clamp(0.84rem, 3vw, 0.95rem);
   font-weight: 700;
 }
 
 .play-button {
   width: 100%;
-  min-height: 64px;
+  min-height: clamp(54px, 7svh, 64px);
   border: 0;
   border-radius: 22px;
   background: var(--text);
@@ -268,29 +289,37 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .status-panel {
-  min-height: 76px;
+  min-height: clamp(66px, 8.5svh, 76px);
   border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 16px 18px;
+  border-radius: clamp(20px, 5vw, 24px);
+  padding: clamp(12px, 3.5vw, 16px) clamp(14px, 4vw, 18px);
   background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
+  min-width: 0;
 }
 
 .status-panel div {
   display: grid;
   gap: 4px;
+  min-width: 0;
 }
 
 .status-panel strong {
   font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .status-panel span {
   font-size: 0.82rem;
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .status-dot {
@@ -326,6 +355,44 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   .breath-orb {
-    width: min(66vw, 250px);
+    width: min(62vw, 31svh, 250px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .ratio {
+    max-width: none;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .duration-panel {
+    gap: 7px;
+  }
+
+  .duration-card {
+    min-height: 66px;
+  }
+
+  .status-panel {
+    align-items: start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-height: 620px) {
+  .app-shell {
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .breath-orb {
+    width: min(56vw, 27svh, 210px);
+    min-width: 150px;
   }
 }
