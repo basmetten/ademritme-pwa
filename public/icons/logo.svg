@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Ademritme">
+  <rect width="512" height="512" rx="112" fill="#071411"/>
+  <circle cx="256" cy="256" r="152" fill="none" stroke="#F4F8EF" stroke-opacity=".12" stroke-width="28"/>
+  <path d="M 132 279 C 166 279 170 201 206 201 C 234 201 241 269 264 314" fill="none" stroke="#BAF4CC" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 264 314 C 273 333 283 351 294 351 C 333 351 337 263 380 263" fill="none" stroke="#90AAFA" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="256" cy="256" r="22" fill="#F4F8EF" fill-opacity=".92"/>
+</svg>

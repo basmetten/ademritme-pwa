@@ -1,4 +1,4 @@
-const CACHE_NAME = "ademritme-v3";
+const CACHE_NAME = "ademritme-v4";
 const ASSETS = [
   "./",
   "index.html",
@@ -6,6 +6,7 @@ const ASSETS = [
   "app.js",
   "manifest.webmanifest",
   "favicon.ico",
+  "icons/logo.svg",
   "icons/icon-192.png",
   "icons/icon-512.png",
   "audio/hrv-breath-5min.mp3",
