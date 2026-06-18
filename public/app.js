@@ -2,17 +2,17 @@ const sessions = {
   5: {
     minutes: 5,
     duration: 300,
-    src: "/audio/hrv-breath-5min.mp3",
+    src: "audio/hrv-breath-5min.mp3",
   },
   8: {
     minutes: 8,
     duration: 480,
-    src: "/audio/hrv-breath-8min.mp3",
+    src: "audio/hrv-breath-8min.mp3",
   },
   12: {
     minutes: 12,
     duration: 720,
-    src: "/audio/hrv-breath-12min.mp3",
+    src: "audio/hrv-breath-12min.mp3",
   },
 };
 
@@ -211,7 +211,7 @@ document.addEventListener("visibilitychange", () => {
 });
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/service-worker.js")
+  navigator.serviceWorker.register("service-worker.js")
     .then(() => {
       statusDot.textContent = "offline-ready";
     })
