@@ -1,16 +1,16 @@
-const CACHE_NAME = "ademritme-v2";
+const CACHE_NAME = "ademritme-v3";
 const ASSETS = [
-  "/",
-  "/index.html",
-  "/styles.css",
-  "/app.js",
-  "/manifest.webmanifest",
-  "/favicon.ico",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
-  "/audio/hrv-breath-5min.mp3",
-  "/audio/hrv-breath-8min.mp3",
-  "/audio/hrv-breath-12min.mp3",
+  "./",
+  "index.html",
+  "styles.css",
+  "app.js",
+  "manifest.webmanifest",
+  "favicon.ico",
+  "icons/icon-192.png",
+  "icons/icon-512.png",
+  "audio/hrv-breath-5min.mp3",
+  "audio/hrv-breath-8min.mp3",
+  "audio/hrv-breath-12min.mp3",
 ];
 
 self.addEventListener("install", (event) => {
