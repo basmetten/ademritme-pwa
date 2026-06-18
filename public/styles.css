@@ -22,20 +22,22 @@
 }
 
 html {
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
   background: var(--bg);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 body {
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
   margin: 0;
   background:
     radial-gradient(circle at 50% 18%, rgba(114, 176, 157, 0.22), transparent 30rem),
     linear-gradient(180deg, #0a1b17 0%, var(--bg-deep) 100%);
   color: var(--text);
   letter-spacing: 0;
-  overflow-x: hidden;
+  overflow: hidden;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -47,13 +49,14 @@ input {
 
 .app-shell {
   width: min(100%, 520px);
-  min-height: 100svh;
+  height: 100svh;
+  min-height: 0;
   margin: 0 auto;
-  padding: calc(env(safe-area-inset-top) + clamp(14px, 2.8svh, 24px)) clamp(14px, 4.8vw, 20px) calc(env(safe-area-inset-bottom) + clamp(16px, 2.6svh, 22px));
+  padding: calc(env(safe-area-inset-top) + clamp(8px, 1.7svh, 16px)) clamp(14px, 4.8vw, 20px) calc(env(safe-area-inset-bottom) + clamp(10px, 1.8svh, 16px));
   display: grid;
   grid-template-rows: auto auto 1fr auto;
-  gap: clamp(14px, 2.5svh, 22px);
-  overflow: clip visible;
+  gap: clamp(8px, 1.45svh, 14px);
+  overflow: hidden;
 }
 
 .hero {
@@ -74,7 +77,7 @@ input {
 }
 
 .time-label {
-  margin: 0 0 8px;
+  margin: 0 0 clamp(4px, 0.8svh, 7px);
   font-size: 0.88rem;
   font-weight: 700;
   display: inline-flex;
@@ -92,15 +95,15 @@ input {
 
 h1 {
   margin: 0;
-  font-size: clamp(2.38rem, 13.2vw, 4.35rem);
-  line-height: 0.9;
+  font-size: clamp(2.15rem, 12vw, 4.05rem);
+  line-height: 0.86;
   font-weight: 780;
   letter-spacing: 0;
   overflow-wrap: anywhere;
 }
 
 .ratio {
-  margin: 0 0 8px;
+  margin: 0;
   max-width: 9rem;
   text-align: right;
   font-size: 0.95rem;
@@ -116,7 +119,7 @@ h1 {
 }
 
 .duration-card {
-  min-height: clamp(72px, 10.4svh, 96px);
+  min-height: clamp(52px, 8.1svh, 78px);
   border: 1px solid var(--line);
   border-radius: clamp(18px, 5vw, 24px);
   background: var(--surface);
@@ -129,7 +132,7 @@ h1 {
 }
 
 .duration-card span {
-  font-size: clamp(1.82rem, 8vw, 2.25rem);
+  font-size: clamp(1.55rem, 7vw, 2.05rem);
   line-height: 1;
   font-weight: 760;
 }
@@ -149,20 +152,20 @@ h1 {
   min-height: 0;
   border: 1px solid var(--line);
   border-radius: clamp(26px, 7vw, 36px);
-  padding: clamp(16px, 5vw, 24px);
+  padding: clamp(12px, 2.2svh, 20px) clamp(16px, 5vw, 24px);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.035)),
     rgba(9, 23, 20, 0.72);
   box-shadow: 0 24px 68px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   display: grid;
   align-content: center;
-  gap: clamp(16px, 2.8svh, 24px);
+  gap: clamp(9px, 1.55svh, 16px);
   overflow: hidden;
 }
 
 .breath-orb {
-  width: min(72vw, 34svh, 310px);
-  min-width: 168px;
+  width: min(64vw, 27svh, 280px);
+  min-width: 142px;
   aspect-ratio: 1;
   margin: 0 auto;
   position: relative;
@@ -210,21 +213,21 @@ h1 {
 
 .breath-copy strong {
   margin-top: 4px;
-  font-size: clamp(3.05rem, 18vw, 6.2rem);
+  font-size: clamp(2.8rem, 16.4vw, 5.4rem);
   line-height: 0.92;
   font-weight: 780;
   letter-spacing: 0;
 }
 
 .breath-copy small {
-  margin-top: 8px;
+  margin-top: clamp(4px, 0.8svh, 8px);
   font-size: clamp(0.84rem, 3vw, 0.95rem);
   font-weight: 700;
 }
 
 .play-button {
   width: 100%;
-  min-height: clamp(54px, 7svh, 64px);
+  min-height: clamp(48px, 6.3svh, 58px);
   border: 0;
   border-radius: 22px;
   background: var(--text);
@@ -255,13 +258,13 @@ h1 {
 
 .timeline {
   display: grid;
-  gap: 10px;
+  gap: clamp(6px, 1svh, 10px);
 }
 
 .timeline-meta {
   display: flex;
   justify-content: space-between;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   font-weight: 720;
 }
 
@@ -289,10 +292,10 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .status-panel {
-  min-height: clamp(66px, 8.5svh, 76px);
+  min-height: clamp(52px, 7.7svh, 66px);
   border: 1px solid var(--line);
   border-radius: clamp(20px, 5vw, 24px);
-  padding: clamp(12px, 3.5vw, 16px) clamp(14px, 4vw, 18px);
+  padding: clamp(10px, 1.7svh, 14px) clamp(14px, 4vw, 18px);
   background: var(--surface);
   display: flex;
   align-items: center;
@@ -339,23 +342,23 @@ input[type="range"]::-webkit-slider-thumb {
 
 @media (max-height: 720px) {
   .app-shell {
-    gap: 14px;
-    padding-top: calc(env(safe-area-inset-top) + 14px);
+    gap: 8px;
+    padding-top: calc(env(safe-area-inset-top) + 8px);
   }
 
   .duration-card {
-    min-height: 78px;
+    min-height: 52px;
     border-radius: 20px;
   }
 
   .player {
     border-radius: 30px;
-    padding: 18px;
-    gap: 16px;
+    padding-block: 12px;
+    gap: 9px;
   }
 
   .breath-orb {
-    width: min(62vw, 31svh, 250px);
+    width: min(58vw, 24svh, 220px);
   }
 }
 
@@ -379,11 +382,6 @@ input[type="range"]::-webkit-slider-thumb {
     min-height: 66px;
   }
 
-  .status-panel {
-    align-items: start;
-    flex-direction: column;
-    gap: 8px;
-  }
 }
 
 @media (max-height: 620px) {
@@ -392,7 +390,7 @@ input[type="range"]::-webkit-slider-thumb {
   }
 
   .breath-orb {
-    width: min(56vw, 27svh, 210px);
-    min-width: 150px;
+    width: min(52vw, 22svh, 190px);
+    min-width: 128px;
   }
 }
