@@ -1,18 +1,20 @@
+const assetVersion = "timing-5-1-v1";
+
 const sessions = {
   5: {
     minutes: 5,
     duration: 300,
-    src: "audio/hrv-breath-5min.mp3",
+    src: `audio/hrv-breath-5min.mp3?v=${assetVersion}`,
   },
   8: {
     minutes: 8,
     duration: 480,
-    src: "audio/hrv-breath-8min.mp3",
+    src: `audio/hrv-breath-8min.mp3?v=${assetVersion}`,
   },
   12: {
     minutes: 12,
     duration: 720,
-    src: "audio/hrv-breath-12min.mp3",
+    src: `audio/hrv-breath-12min.mp3?v=${assetVersion}`,
   },
 };
 
