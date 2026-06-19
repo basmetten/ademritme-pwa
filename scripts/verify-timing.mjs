@@ -11,7 +11,11 @@ const checks = [
   ["scripts/render_audio_assets.py", "INHALE_SECONDS = 90 / 17"],
   ["scripts/render_audio_assets.py", "EXHALE_SECONDS = 110 / 17"],
   ["public/index.html", "5,3s in · 6,5s uit"],
-  ["public/service-worker.js", "const CACHE_NAME = \"ademritme-v6\";"],
+  ["public/index.html", "app.js?v=timing-5-1-v1"],
+  ["public/app.js", "const assetVersion = \"timing-5-1-v1\";"],
+  ["public/service-worker.js", "const CACHE_NAME = \"ademritme-v8\";"],
+  ["public/service-worker.js", "request.mode === \"navigate\" || request.destination === \"script\""],
+  ["public/service-worker.js", "audio/hrv-breath-8min.mp3?v=timing-5-1-v1"],
 ];
 
 for (const [file, needle] of checks) {
