@@ -16,8 +16,8 @@ const sessions = {
   },
 };
 
-const inhaleSeconds = 5.2;
-const exhaleSeconds = 6.35;
+const inhaleSeconds = 90 / 17;
+const exhaleSeconds = 110 / 17;
 const cycleSeconds = inhaleSeconds + exhaleSeconds;
 const ringLength = 578.05;
 
@@ -32,6 +32,7 @@ const sessionTitle = document.querySelector("#session-title");
 const sessionDetail = document.querySelector("#session-detail");
 const seek = document.querySelector("#seek");
 const statusDot = document.querySelector("#status-dot");
+const ratio = document.querySelector("#ratio");
 const ring = document.querySelector(".ring-progress");
 const durationCards = Array.from(document.querySelectorAll(".duration-card"));
 
@@ -49,6 +50,10 @@ function formatTime(seconds) {
 
 function comma(value) {
   return value.toFixed(2).replace(".", ",");
+}
+
+function commaOne(value) {
+  return value.toFixed(1).replace(".", ",");
 }
 
 function setSession(next) {
@@ -220,4 +225,5 @@ if ("serviceWorker" in navigator) {
     });
 }
 
+ratio.textContent = `${commaOne(inhaleSeconds)}s in · ${commaOne(exhaleSeconds)}s uit`;
 setSession(selected);
