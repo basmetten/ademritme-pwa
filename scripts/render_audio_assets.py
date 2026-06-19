@@ -16,8 +16,8 @@ import numpy as np
 SOURCE = Path("/Users/basmetten/Downloads/sample voorbeeld beter.m4a")
 PUBLIC_AUDIO = Path("/Users/basmetten/hrv-breath-pwa/public/audio")
 SAMPLE_RATE = 48_000
-INHALE_SECONDS = 5.20
-EXHALE_SECONDS = 6.35
+INHALE_SECONDS = 90 / 17
+EXHALE_SECONDS = 110 / 17
 TARGET_MEAN_DB = -40.5
 TARGET_PEAK_DB = -20.4
 

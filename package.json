@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "start": "python3 -m http.server 4173 --bind 0.0.0.0 -d public",
-    "verify:audio": "node scripts/verify-audio.mjs"
+    "verify": "npm run verify:timing && npm run verify:audio",
+    "verify:audio": "node scripts/verify-audio.mjs",
+    "verify:timing": "node scripts/verify-timing.mjs"
   }
 }
